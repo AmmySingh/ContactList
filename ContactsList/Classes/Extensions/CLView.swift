@@ -8,6 +8,17 @@
 
 import UIKit
 
-class CLView: NSObject {
-
+extension UIView {
+    
+    func setBorderWidthAndColor(width: CGFloat, color: UIColor) {
+        
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
+    
+    func setRadius(radius: CGFloat) {
+        
+        self.clipsToBounds      = true
+        self.layer.cornerRadius = radius
+    }
 }

@@ -7,7 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
-class CLContactsModel: NSObject {
+class CLContactsModel: NSManagedObject {
 
+   // var array_Contacts = [CLContact]()
 }
+
+//class CLContact: NSManagedObject {
+//    
+//    @NSManaged var firstName   = String()
+//    @NSManaged var lastName    : String
+//    @NSManaged var phoneNumber : String
+//    @NSManaged var userImage   : Data
+//    
+//    init(firstName: String, lastName: String, phoneNumber: String, userImage: Data) {
+//        
+//        self.firstName   = firstName
+//        self.lastName    = lastName
+//        self.phoneNumber = phoneNumber
+//        self.userImage   = userImage
+//    }
+//}

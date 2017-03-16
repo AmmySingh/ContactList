@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ContactUser" representedClassName="ContactUser" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="groupId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userImage" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
+        <relationship name="groupRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupBy" inverseName="contactRelationShip" inverseEntity="GroupBy" syncable="YES"/>
+    </entity>
+    <entity name="GroupBy" representedClassName="GroupBy" syncable="YES">
+        <attribute name="contactsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="groupImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contactRelationShip" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContactUser" inverseName="groupRelationship" inverseEntity="ContactUser" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ContactUser" positionX="81" positionY="-70" width="128" height="133"/>
+        <element name="GroupBy" positionX="315" positionY="-34" width="128" height="103"/>
+    </elements>
 </model>
