@@ -221,6 +221,18 @@ class CLCoreDataManager: NSObject {
         
         do {
             let people = try managedContext.fetch(fetchRequest)
+            
+            if people.count > 0 {
+                
+                let contact = people[0] as! ContactUser
+                contact.groupRelationship?.contactsCount = Int32(people.count)
+            }
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+            
             return completion(people.count > 0 ? true:false)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")

@@ -149,6 +149,9 @@ class CLContactsViewController: UIViewController {
                         CLUtility.showAlert(title: "Failure! Group not deleted.")
                     }
                 })
+            } else {
+                let notificationName = Notification.Name("ReloadGroupsFromCoreData")
+                NotificationCenter.default.post(name: notificationName, object: nil)
             }
         }
     }
